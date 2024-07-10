@@ -1,0 +1,39 @@
+{
+  "SIDEBAR": {
+    "MENU": "Menu",
+    "DASHBOARD": "Tableau de bord",
+    "TODOS": "Tâches",
+    "LOGOUT": "Se déconnecter"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Authentification",
+      "SUBTITLE": "Veuillez vous connecter à votre compte",
+      "FORM": {
+        "EMAIL": "Adresse email",
+        "PASSWORD": "Mot de passe",
+        "CONNEXION": "Connexion",
+        "NEW_USER": "Vous n'avez pas de compte ?",
+        "REGISTER": "Créer un compte"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Création de compte",
+      "SUBTITLE": "Veuillez remplir le formulaire ci-dessous pour créer un compte",
+      "FORM": {
+        "NAME": "Nom et prénom(s)",
+        "EMAIL": "Adresse email",
+        "PASSWORD": "Mot de passe",
+        "REGISTER": "Créer mon compte",
+        "OLD_USER": "Vous avez déjà un compte ?",
+        "LOGIN": "Connectez-vous"
+      }
+    }
+  },
+  "DASHBOARD": {
+    "TODOS": {
+      "TITLE": "Liste des tâches",
+      "CREATE": "Créer une tâche"
+    }
+  }
+}

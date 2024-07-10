@@ -1,0 +1,13 @@
+{
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Authentication",
+      "SUBTITLE": "Please log in to your account"
+    }
+  },
+  "DASHBOARD": {
+    "TODOS": {
+      "TITLE": "To do-list"
+    }
+  }
+ }

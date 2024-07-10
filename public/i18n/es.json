@@ -1,0 +1,13 @@
+{
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Autenticación",
+      "SUBTITLE": "Inicie sesión en su cuenta"
+    }
+  },
+  "DASHBOARD": {
+    "TODOS": {
+      "TITLE": "Lista de quehaceres"
+    }
+  }
+}

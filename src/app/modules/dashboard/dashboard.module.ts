@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard/components/dashboard.component';
-import { TodosComponent } from './todos/todos.component';
 import { CoreModule } from '../../core/core.module';
+import { TodosComponent } from './todos/components/todos.component';
 
 
 @NgModule({

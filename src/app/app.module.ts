@@ -13,11 +13,21 @@ import { PasswordModule } from 'primeng/password';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './core/components/sidebar/sidebar.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { JwtModule } from '@auth0/angular-jwt';
+import { environment } from '../environments/environment.development';
+import { jwtInterceptor } from './core/interceptors/jwt/jwt.interceptor';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../../i18n/', '.json');
+}
+
+export function tokenGetter() {
+  if (typeof localStorage !== 'undefined') {
+    return localStorage.getItem('token');
+  }
+  return null;
 }
 
 @NgModule({
@@ -45,10 +55,21 @@ export function createTranslateLoader(http: HttpClient) {
             useFactory: (createTranslateLoader),
             deps: [HttpClient]
         }
+    }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: [environment.api.core_base_url],
+        disallowedRoutes: [
+          environment.api.core_base_url + '/api/v1/login',
+          environment.api.core_base_url + '/api/v1/register'
+        ]
+      }
     })
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })

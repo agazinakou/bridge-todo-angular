@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/components/dashboard.component';
 import { authGuard } from '../../core/guard/auth/auth.guard';
 import { AppLayoutComponent } from '../../core/layouts/app-layout/app-layout.component';
-import { TodosComponent } from './todos/todos.component';
+import { TodosComponent } from './todos/components/todos.component';
 
 const routes: Routes = [
   {

@@ -5,15 +5,18 @@ import { RegisterComponent } from './modules/auth/register/components/register.c
 import { AppLayoutComponent } from './core/layouts/app-layout/app-layout.component';
 import { DashboardComponent } from './modules/dashboard/dashboard/components/dashboard.component';
 import { authGuard } from './core/guard/auth/auth.guard';
+import { unAuthGuard } from './core/guard/unAuth/un-auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [unAuthGuard]
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [unAuthGuard]
   },
   {
     path: 'dashboard',

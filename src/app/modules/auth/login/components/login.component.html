@@ -16,11 +16,15 @@
                 aria-describedby="email"
                 placeholder=""
                 formControlName="email"
+                [ngClass]="[f('email')?.invalid && f('email')?.touched ? 'is-invalid' : '']"
               />
             </div>
             <div class="mb-3 w-100">
               <label for="password" class="form-label">{{ 'AUTH.LOGIN.FORM.PASSWORD' | translate }}</label>
-              <p-password formControlName="password" [toggleMask]="true" name="password" id="password" />
+              <p-password [feedback]="false" formControlName="password"
+              [toggleMask]="true" name="password" id="password"
+              [ngClass]="[f('password')?.invalid && f('password')?.touched ? 'is-invalid' : '']"
+              />
             </div>
             <button [disabled]="!loginForm.valid" class="btn btn-primary w-100" type="submit">{{ 'AUTH.LOGIN.FORM.CONNEXION' | translate }}</button>
           </form>

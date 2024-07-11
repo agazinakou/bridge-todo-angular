@@ -16,6 +16,7 @@
                 aria-describedby="name"
                 placeholder=""
                 formControlName="name"
+                [ngClass]="[f('name')?.invalid && f('name')?.touched ? 'is-invalid' : '']"
               />
             </div>
             <div class="mb-3">
@@ -28,11 +29,14 @@
                 aria-describedby="email"
                 placeholder=""
                 formControlName="email"
+                [ngClass]="[f('email')?.invalid && f('email')?.touched ? 'is-invalid' : '']"
               />
             </div>
             <div class="mb-3 w-100">
               <label for="password" class="form-label">{{ 'AUTH.REGISTER.FORM.PASSWORD' | translate }}</label>
-              <p-password formControlName="password" [toggleMask]="true" name="password" id="password" />
+              <p-password formControlName="password" [toggleMask]="true" [feedback]="false"
+              [ngClass]="[f('password')?.invalid && f('password')?.touched ? 'is-invalid' : '']"
+              name="password" id="password" />
             </div>
             <button [disabled]="!registerForm.valid" class="btn btn-primary w-100" type="submit">{{ 'AUTH.REGISTER.FORM.REGISTER' | translate }}</button>
           </form>

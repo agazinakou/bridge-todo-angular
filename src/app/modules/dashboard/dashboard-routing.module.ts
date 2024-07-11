@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/components/dashboard.component';
-import { authGuard } from '../../core/guard/auth/auth.guard';
 import { AppLayoutComponent } from '../../core/layouts/app-layout/app-layout.component';
-import { TodosComponent } from './todos/todos.component';
+import { AuthService } from '../../core/services/auth/auth.service';
+import { authGuard } from '../../core/guard/auth/auth.guard';
+import { TodosComponent } from './todos/components/todos.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     component: AppLayoutComponent,
     children: [{
       path: '',
-      component: DashboardComponent
+      component: DashboardComponent,
     },{
       path: 'todos',
       component: TodosComponent

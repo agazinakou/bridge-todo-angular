@@ -1,1 +1,47 @@
-<p>dashboard works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <p>Tâches</p>
+              <h1>{{ resume.all }}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <p>Mes tâches</p>
+              <h1>{{ resume.me }}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4">
+          <div class="card alert alert-danger">
+            <div class="card-body p-0">
+              <p>À faire</p>
+              <h1>{{ resume.todo }}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4">
+          <div class="card">
+            <div class="card-body">
+              <p>Terminées</p>
+              <h1>{{ resume.done }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card h-50">
+        <div class="card-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

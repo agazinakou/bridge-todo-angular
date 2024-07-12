@@ -17,6 +17,7 @@ import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { environment } from '../environments/environment';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../../i18n/', '.json');
@@ -66,7 +67,8 @@ export function tokenGetter() {
   providers: [
     provideClientHydration(),
     provideHttpClient(),
-    TranslateService
+    TranslateService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

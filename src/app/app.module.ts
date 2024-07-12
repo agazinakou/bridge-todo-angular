@@ -13,7 +13,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './core/components/sidebar/sidebar.component';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { environment } from '../environments/environment.development';
@@ -37,7 +37,7 @@ export function tokenGetter() {
     LoginComponent,
     RegisterComponent,
     AppLayoutComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +48,6 @@ export function tokenGetter() {
     PasswordModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     TranslateModule.forRoot({
         defaultLanguage: 'fr',
         loader: {
@@ -67,7 +66,8 @@ export function tokenGetter() {
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient()
+    provideHttpClient(),
+    TranslateService
   ],
   bootstrap: [AppComponent]
 })

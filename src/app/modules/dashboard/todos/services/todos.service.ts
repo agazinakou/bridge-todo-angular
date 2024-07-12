@@ -32,4 +32,26 @@ export class TodosService {
         })
       );
   }
+
+  mark(todo: Todo) {
+    return this.http
+      .put<any>(`${environment.apiUrl}/todo/${todo.id}/mark`, {done: !todo.done})
+      .pipe(
+        map((response: any) => {
+          console.log('Todos service', response);
+          return response;
+        })
+      );
+  }
+
+  delete(id: string) {
+    return this.http
+      .delete<any>(`${environment.apiUrl}/todo/${id}`)
+      .pipe(
+        map((response: any) => {
+          console.log('Todos service', response);
+          return response;
+        })
+      );
+  }
 }

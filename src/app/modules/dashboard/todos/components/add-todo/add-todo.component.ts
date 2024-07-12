@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TodosService } from '../../services/todos.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs';
@@ -9,6 +9,7 @@ import { first } from 'rxjs';
   styleUrl: './add-todo.component.scss'
 })
 export class AddTodoComponent {
+  @Output() action = new EventEmitter<boolean>;
   todoForm!: FormGroup;
   loading = false;
 
@@ -16,8 +17,8 @@ export class AddTodoComponent {
     private todosService: TodosService
   ) {
     this.todoForm = this.formBuilder.group({
-      title: ['', [Validators.required, Validators.maxLength(2), Validators.maxLength(255)]],
-      description: ['', [Validators.required, Validators.maxLength(2), Validators.maxLength(255)]],
+      title: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
+      description: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
     });
   }
 
@@ -30,7 +31,14 @@ export class AddTodoComponent {
         .subscribe(
           (response: any) => {
             if(response.status === 'success'){
-              alert('OK');
+              this.action.emit(true);
+              const modal = document.getElementById('close-modal-button');
+              if(modal){
+                modal.click();
+              }
+              this.todoForm.reset();
+            } else {
+              this.action.emit(false);
             }
           },
           (error: any) => {

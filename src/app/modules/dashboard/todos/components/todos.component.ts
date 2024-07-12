@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TodosService } from '../services/todos.service';
-import { first } from 'rxjs';
+import { first, Observable, Subscriber } from 'rxjs';
 import { Todo } from '../../../../core/models/todo';
 
 @Component({
@@ -26,6 +26,7 @@ export class TodosComponent implements OnInit {
         (response: any) => {
           if(response.status === 'success'){
             this.todos = response.todos;
+            this.loading = false;
           }
         },
         (error: any) => {
@@ -33,5 +34,17 @@ export class TodosComponent implements OnInit {
         }
       );
   }
+
+  addCallBack = ($event: boolean) => {
+      if($event){
+        this.ngOnInit();
+      }
+  }
+
+  removeCallBack = ($event: boolean) => {
+    if($event){
+      this.ngOnInit();
+    }
+}
 
 }

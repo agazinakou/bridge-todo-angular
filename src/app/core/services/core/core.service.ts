@@ -18,6 +18,8 @@ export class CoreService {
       this.http.get<any>(environment.apiUrl + '/me').subscribe((response: any) => {
         this.currentUserSubject = new BehaviorSubject<User>(response.user);
         resolve();
+      }, (error) => {
+        reject();
       })
     });
   }

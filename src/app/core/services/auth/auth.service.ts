@@ -18,7 +18,7 @@ export class AuthService {
   }
 
   isAuthenticated = async () => {
-    var token = this.currentTokenValue();
+    const token = this.currentTokenValue();
     if(token){
       if(this.jwtHelperService.isTokenExpired(token)){
         this.logout();
@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   logout = () => {
-    localStorage.clear();
+    localStorage.removeItem('token');
     location.href = '/';
   }
 }

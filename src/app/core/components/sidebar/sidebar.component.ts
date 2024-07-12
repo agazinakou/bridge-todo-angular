@@ -37,9 +37,9 @@ export class SidebarComponent implements OnInit {
   }
 
   getCurrentLanguage = () => {
-    var localStorage = this.document.defaultView?.localStorage;
+    const localStorage = this.document.defaultView?.localStorage;
     if(localStorage){
-      let local = localStorage.getItem('LANGUAGE');
+      const local = localStorage.getItem('LANGUAGE');
       if(local){
         this.choose(JSON.parse(local));
       } else {
@@ -51,7 +51,7 @@ export class SidebarComponent implements OnInit {
   choose = (language: any) => {
     this.currentLanguage = language;
     this.translate.use(language.code);
-    var localStorage = this.document.defaultView?.localStorage;
+    const localStorage = this.document.defaultView?.localStorage;
     if(localStorage){
       localStorage.setItem('LANGUAGE', JSON.stringify(language));
     }

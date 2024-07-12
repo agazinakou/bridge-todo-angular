@@ -8,20 +8,23 @@ import { TodosComponent } from './todos/components/todos.component';
 import { AddTodoComponent } from './todos/components/add-todo/add-todo.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { TodoComponent } from './todos/components/todo/todo.component';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     TodosComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    TodoComponent
   ],
   imports: [
     CommonModule,
     CoreModule,
     DashboardRoutingModule,
     InputTextModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule
   ]
 })
 export class DashboardModule { }

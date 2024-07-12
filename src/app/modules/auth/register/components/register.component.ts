@@ -42,7 +42,7 @@ export class RegisterComponent {
           (response: any) => {
             if(response.status === 'success'){
               localStorage.setItem('token', response.authorisation.token);
-              this.coreService.currentUserSubject = new BehaviorSubject<User>(response.user);
+              this.coreService.currentUserSubject.next(response.user);
               this.router.navigate(['/dashboard']);
             }
           },

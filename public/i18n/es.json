@@ -1,13 +1,39 @@
 {
+  "SIDEBAR": {
+    "MENU": "Menú",
+    "DASHBOARD": "Panel de control",
+    "TODOS": "Tareas",
+    "LOGOUT": "Cerrar sesión"
+  },
   "AUTH": {
     "LOGIN": {
       "TITLE": "Autenticación",
-      "SUBTITLE": "Inicie sesión en su cuenta"
+      "SUBTITLE": "Por favor, inicie sesión en su cuenta",
+      "FORM": {
+        "EMAIL": "Dirección de correo electrónico",
+        "PASSWORD": "Contraseña",
+        "CONNEXION": "Iniciar sesión",
+        "NEW_USER": "¿No tienes una cuenta?",
+        "REGISTER": "Crear una cuenta"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Creación de cuenta",
+      "SUBTITLE": "Por favor, complete el siguiente formulario para crear una cuenta",
+      "FORM": {
+        "NAME": "Nombre y apellidos",
+        "EMAIL": "Dirección de correo electrónico",
+        "PASSWORD": "Contraseña",
+        "REGISTER": "Crear mi cuenta",
+        "OLD_USER": "¿Ya tienes una cuenta?",
+        "LOGIN": "Iniciar sesión"
+      }
     }
   },
   "DASHBOARD": {
     "TODOS": {
-      "TITLE": "Lista de quehaceres"
+      "TITLE": "Lista de tareas",
+      "CREATE": "Crear una tarea"
     }
   }
 }

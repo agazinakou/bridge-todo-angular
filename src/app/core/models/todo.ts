@@ -5,10 +5,10 @@ export class Todo {
   title: string;
   description: string;
   done: boolean;
-  author_id: string;
+  author_id?: string;
   author = new User();
-  created_at: Date;
-  updated_at: Date;
+  created_at?: Date;
+  updated_at?: Date;
 
   constructor(obj: any = {}){
     this.id = obj.id;

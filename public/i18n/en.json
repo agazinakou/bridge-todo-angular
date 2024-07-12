@@ -1,13 +1,39 @@
 {
+  "SIDEBAR": {
+    "MENU": "Menu",
+    "DASHBOARD": "Dashboard",
+    "TODOS": "Todos",
+    "LOGOUT": "Logout"
+  },
   "AUTH": {
     "LOGIN": {
       "TITLE": "Authentication",
-      "SUBTITLE": "Please log in to your account"
+      "SUBTITLE": "Please log in to your account",
+      "FORM": {
+        "EMAIL": "Email address",
+        "PASSWORD": "Password",
+        "CONNEXION": "Log in",
+        "NEW_USER": "Don't have an account?",
+        "REGISTER": "Sign up"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Sign Up",
+      "SUBTITLE": "Please fill in the form below to create an account",
+      "FORM": {
+        "NAME": "Full name",
+        "EMAIL": "Email address",
+        "PASSWORD": "Password",
+        "REGISTER": "Sign up",
+        "OLD_USER": "Already have an account?",
+        "LOGIN": "Log in"
+      }
     }
   },
   "DASHBOARD": {
     "TODOS": {
-      "TITLE": "To do-list"
+      "TITLE": "Todo list",
+      "CREATE": "Create a task"
     }
   }
- }
+}

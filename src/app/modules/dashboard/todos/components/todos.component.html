@@ -1,29 +1,15 @@
 <div class="d-flex align-items-center">
   <h2>{{ 'DASHBOARD.TODOS.TITLE' | translate }}</h2>
   <div class="ms-auto">
-    <app-add-todo></app-add-todo>
+    <app-add-todo (action)="addCallBack($event)"></app-add-todo>
   </div>
 </div>
 
-<div class="mb-5">
-  <div class="card mt-4" *ngFor="let todo of todos">
-    <div class="card-body">
-      <label class="custom-checkbox">
-        <input name="dummy" [checked]="todo.done" type="checkbox"><span class="checkmark"></span>
-        {{ todo.title }}
-      </label>
-      <p class="mt-2 mb-2">{{ todo.description }}</p>
-      <div class="row">
-        <div class="col-md-3">
-          <button class="btn btn-light w-100">{{ todo.created_at| date:"d/m/Y H:m" }}</button>
-        </div>
-        <div class="col-md-3">
-          <button class="btn btn-light w-100">{{ todo.author.name }}</button>
-        </div>
-        <div class="col-md-6 text-end">
-          <button class="btn btn-clear text-danger">Supprimer</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="text-center mt-5" *ngIf="loading">
+  <p-progressSpinner ariaLabel="loading" />
+</div>
+<div class="mb-5" *ngIf="!loading">
+  <ng-container *ngFor="let todo of todos">
+    <app-todo [todo]="todo" (action)="removeCallBack($event)"></app-todo>
+  </ng-container>
 </div>

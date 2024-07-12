@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FeesPipe } from './pipes/fees/fees.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { jwtInterceptor } from './interceptors/jwt/jwt.interceptor';
 import { CoreService } from './services/core/core.service';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { errorInterceptor, jwtInterceptor } from './interceptors';
 
 const Modules: any = [
-  TranslateModule
+  TranslateModule,
+  ProgressSpinnerModule
 ]
 
 const Pipes: any = [
@@ -27,7 +29,7 @@ const Pipes: any = [
     ...Modules,
   ],
   providers: [
-    provideHttpClient(withInterceptors([jwtInterceptor])),
+    provideHttpClient(withInterceptors([jwtInterceptor, errorInterceptor])),
     {
       provide: APP_INITIALIZER,
       useFactory: (coreService: CoreService) => () => coreService.init(),

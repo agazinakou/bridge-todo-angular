@@ -67,8 +67,7 @@ export function tokenGetter() {
   providers: [
     provideClientHydration(),
     provideHttpClient(),
-    TranslateService,
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    TranslateService
   ],
   bootstrap: [AppComponent]
 })

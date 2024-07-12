@@ -1,0 +1,59 @@
+{
+  "SIDEBAR": {
+    "MENU": "Menü",
+    "DASHBOARD": "Dashboard",
+    "TODOS": "Aufgaben",
+    "USERS": "Benutzer",
+    "LOGOUT": "Abmelden"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Authentifizierung",
+      "SUBTITLE": "Bitte melden Sie sich bei Ihrem Konto an",
+      "FORM": {
+        "EMAIL": "E-Mail-Adresse",
+        "PASSWORD": "Passwort",
+        "CONNEXION": "Anmelden",
+        "NEW_USER": "Sie haben noch kein Konto?",
+        "REGISTER": "Konto erstellen"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Konto erstellen",
+      "SUBTITLE": "Bitte füllen Sie das folgende Formular aus, um ein Konto zu erstellen",
+      "FORM": {
+        "NAME": "Vor- und Nachname",
+        "EMAIL": "E-Mail-Adresse",
+        "PASSWORD": "Passwort",
+        "REGISTER": "Konto erstellen",
+        "OLD_USER": "Sie haben bereits ein Konto?",
+        "LOGIN": "Anmelden"
+      }
+    }
+  },
+  "DASHBOARD": {
+    "DASHBOARD": {
+      "TODOS": "Aufgaben",
+      "MY_TODO": "Meine Aufgaben",
+      "TODO": "Zu erledigen",
+      "DONE": "Erledigt"
+    },
+    "TODOS": {
+      "TITLE": "Aufgabenliste",
+      "CREATE": "Aufgabe erstellen",
+      "DELETE": "Löschen",
+      "FORM": {
+        "TITLE": "Titel",
+        "DESCRIPTION": "Beschreibung",
+        "CANCEL": "Abbrechen",
+        "CREATE": "Aufgabe erstellen"
+      }
+    },
+    "USERS": {
+      "TITLE": "Benutzerliste",
+      "NAME": "Vor- und Nachname",
+      "EMAIL": "E-Mail-Adresse",
+      "DATE": "Erstellungsdatum"
+    }
+  }
+}

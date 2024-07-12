@@ -6,7 +6,11 @@
 </div>
 
 <div class="text-center mt-5" *ngIf="loading">
-  <p-progressSpinner ariaLabel="loading" />
+  <p-progressSpinner
+    styleClass="w-1rem h-1rem"
+    strokeWidth="6"
+    fill="var(--surface-ground)"
+    animationDuration=".5s" />
 </div>
 <div class="mb-5" *ngIf="!loading">
   <ng-container *ngFor="let todo of todos">

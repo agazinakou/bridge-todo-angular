@@ -1,0 +1,59 @@
+{
+  "SIDEBAR": {
+    "MENU": "Menu",
+    "DASHBOARD": "Painel de Controle",
+    "TODOS": "Tarefas",
+    "USERS": "Usuários",
+    "LOGOUT": "Sair"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Autenticação",
+      "SUBTITLE": "Por favor, faça login na sua conta",
+      "FORM": {
+        "EMAIL": "Endereço de email",
+        "PASSWORD": "Senha",
+        "CONNEXION": "Conectar",
+        "NEW_USER": "Não tem uma conta?",
+        "REGISTER": "Criar uma conta"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Criação de Conta",
+      "SUBTITLE": "Por favor, preencha o formulário abaixo para criar uma conta",
+      "FORM": {
+        "NAME": "Nome e sobrenome(s)",
+        "EMAIL": "Endereço de email",
+        "PASSWORD": "Senha",
+        "REGISTER": "Criar minha conta",
+        "OLD_USER": "Já tem uma conta?",
+        "LOGIN": "Entrar"
+      }
+    }
+  },
+  "DASHBOARD": {
+    "DASHBOARD": {
+      "TODOS": "Tarefas",
+      "MY_TODO": "Minhas tarefas",
+      "TODO": "A fazer",
+      "DONE": "Concluídas"
+    },
+    "TODOS": {
+      "TITLE": "Lista de Tarefas",
+      "CREATE": "Criar uma tarefa",
+      "DELETE": "Excluir",
+      "FORM": {
+        "TITLE": "Título",
+        "DESCRIPTION": "Descrição",
+        "CANCEL": "Cancelar",
+        "CREATE": "Criar a tarefa"
+      }
+    },
+    "USERS": {
+      "TITLE": "Lista de Usuários",
+      "NAME": "Nome e sobrenome(s)",
+      "EMAIL": "Endereço de email",
+      "DATE": "Data de criação"
+    }
+  }
+}

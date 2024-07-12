@@ -1,16 +1,16 @@
-<div class="card">
+<div class="card bg-dark">
   <div class="card-body">
     <div class="d-flex align-items-center mb-3">
-      <p class="m-0">{{ 'SIDEBAR.MENU' | translate }}</p>
+      <p class="m-0 text-white">{{ 'SIDEBAR.MENU' | translate }}</p>
       <div class="ms-auto">
         <div class="dropdown">
-          <button class="btn btn-clear btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-clear text-white btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{ currentLanguage.name }}
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu dropdown-menu-dark">
             <li *ngFor="let language of languages">
               <ng-container *ngIf="language.code !== currentLanguage.code">
-                <a class="dropdown-item" (click)="choose(language)" href="#">{{ language.name }}</a>
+                <a role="button" tabindex="0" (keyup)="choose(language)" class="dropdown-item text-white" (click)="choose(language)">{{ language.name }}</a>
               </ng-container>
             </li>
           </ul>
@@ -23,27 +23,41 @@
         <img src="https://i.pravatar.cc/300" alt="" width="50" class="rounded-circle" />
       </div>
       <div class="flex-grow-1 ms-lg-3">
-        <h5 class="m-0">{{ user.name }}</h5>
-        <p class="m-0 text-muted">{{ user.email }}</p>
+        <h5 class="m-0 text-white">{{ user.name }}</h5>
+        <p class="m-0 text-light">{{ user.email }}</p>
       </div>
     </div>
 
 
     <ul class="nav nav-pills nav-fill d-block">
-      <li class="nav-item">
-        <a class="nav-link text-start"
+      <li class="nav-item mt-2">
+        <a class="nav-link text-start text-white d-flex align-items-center"
           [routerLink]="['/dashboard']"
           [routerLinkActiveOptions]="{exact: true}"
-          routerLinkActive="active">{{ 'SIDEBAR.DASHBOARD' | translate }}</a>
+          routerLinkActive="active">
+          <span class="pi pi-wave-pulse me-2"></span>
+          {{ 'SIDEBAR.DASHBOARD' | translate }}</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-start"
+      <li class="nav-item mt-2">
+        <a class="nav-link text-start text-white d-flex align-items-center"
         [routerLink]="['/dashboard/todos']"
         [routerLinkActiveOptions]="{exact: true}"
-        routerLinkActive="active">{{ 'SIDEBAR.TODOS' | translate }}</a>
+        routerLinkActive="active">
+        <span class="pi pi-wave-pulse me-2"></span>
+        {{ 'SIDEBAR.TODOS' | translate }}</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-start cursor" href="#" (click)="logout()">{{ 'SIDEBAR.LOGOUT' | translate }}</a>
+      <li class="nav-item mt-2">
+        <a class="nav-link text-start text-white d-flex align-items-center"
+        [routerLink]="['/dashboard/users']"
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="active">
+        <span class="pi pi-list-check me-2"></span>
+        {{ 'SIDEBAR.USERS' | translate }}</a>
+      </li>
+      <li class="nav-item mt-2">
+        <a class="nav-link text-start text-white cursor d-flex align-items-center" href="#" (click)="logout()">
+          <span class="pi pi-sign-out me-2"></span>
+          {{ 'SIDEBAR.LOGOUT' | translate }}</a>
       </li>
     </ul>
   </div>

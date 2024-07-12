@@ -4,11 +4,11 @@ import { DashboardComponent } from './dashboard/components/dashboard.component';
 import { AppLayoutComponent } from '../../core/layouts/app-layout/app-layout.component';
 import { authGuard } from '../../core/guard/auth/auth.guard';
 import { TodosComponent } from './todos/components/todos.component';
+import { UsersComponent } from './users/components/users.component';
 
 const routes: Routes = [
   {
     path: '',
-    canActivate: [authGuard],
     component: AppLayoutComponent,
     children: [{
       path: '',
@@ -16,6 +16,9 @@ const routes: Routes = [
     },{
       path: 'todos',
       component: TodosComponent
+    },{
+      path: 'users',
+      component: UsersComponent
     }]
   }
 ];

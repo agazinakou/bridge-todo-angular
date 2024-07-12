@@ -29,6 +29,7 @@
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.3",
     "express": "^4.19.2",
+    "primeicons": "^7.0.0",
     "primeng": "^17.18.3",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.12.2",

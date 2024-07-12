@@ -9,10 +9,6 @@ import { Todo } from '../../../../core/models/todo';
   styleUrl: './todos.component.scss'
 })
 export class TodosComponent implements OnInit {
-  amount = 100000000;
-  today = new Date();
-  customer = 'Adam Warlok';
-
   todos : Todo[] = [];
   loading = true;
 

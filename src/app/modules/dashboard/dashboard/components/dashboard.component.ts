@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../services/dashboard.service';
 import { first } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,11 +16,10 @@ export class DashboardComponent implements OnInit {
 
   options: any;
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService, private translateService: TranslateService) {}
 
   ngOnInit(): void {
-
-      this.getResume();
+    this.getResume();
   }
 
   getResume = () => {
@@ -43,9 +43,11 @@ export class DashboardComponent implements OnInit {
   initChart = () => {
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
+    const MY_TODOS: any = this.translateService.instant('DASHBOARD.DASHBOARD.MY_TODO');
+    const DONE: any = this.translateService.instant('DASHBOARD.DASHBOARD.DONE');
 
     this.data = {
-        labels: ['À faire', 'Terminées'],
+        labels: [MY_TODOS, DONE],
         datasets: [
             {
                 data: [this.resume.todo, this.resume.done],

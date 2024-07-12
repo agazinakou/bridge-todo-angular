@@ -1,5 +1,9 @@
 <div class="text-center mt-5" *ngIf="loading">
-  <p-progressSpinner ariaLabel="loading" />
+  <p-progressSpinner
+    styleClass="w-1rem h-1rem"
+    strokeWidth="6"
+    fill="var(--surface-ground)"
+    animationDuration=".5s" />
 </div>
 <div class="container" *ngIf="!loading">
   <div class="row">
@@ -8,7 +12,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <p>Tâches</p>
+              <p>{{ 'DASHBOARD.DASHBOARD.TODOS' | translate }}</p>
               <h1>{{ resume.all }}</h1>
             </div>
           </div>
@@ -16,7 +20,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <p>Mes tâches</p>
+              <p>{{ 'DASHBOARD.DASHBOARD.MY_TODO' | translate }}</p>
               <h1>{{ resume.me }}</h1>
             </div>
           </div>
@@ -24,7 +28,7 @@
         <div class="col-md-6 mt-4">
           <div class="card alert alert-danger">
             <div class="card-body p-0">
-              <p>À faire</p>
+              <p>{{ 'DASHBOARD.DASHBOARD.TODO' | translate }}</p>
               <h1>{{ resume.todo }}</h1>
             </div>
           </div>
@@ -32,7 +36,7 @@
         <div class="col-md-6 mt-4">
           <div class="card">
             <div class="card-body">
-              <p>Terminées</p>
+              <p>{{ 'DASHBOARD.DASHBOARD.DONE' | translate }}</p>
               <h1>{{ resume.done }}</h1>
             </div>
           </div>

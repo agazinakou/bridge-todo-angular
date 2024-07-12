@@ -1,8 +1,9 @@
 {
   "SIDEBAR": {
     "MENU": "Menú",
-    "DASHBOARD": "Panel de control",
+    "DASHBOARD": "Tablero",
     "TODOS": "Tareas",
+    "USERS": "Usuarios",
     "LOGOUT": "Cerrar sesión"
   },
   "AUTH": {
@@ -10,7 +11,7 @@
       "TITLE": "Autenticación",
       "SUBTITLE": "Por favor, inicie sesión en su cuenta",
       "FORM": {
-        "EMAIL": "Dirección de correo electrónico",
+        "EMAIL": "Correo electrónico",
         "PASSWORD": "Contraseña",
         "CONNEXION": "Iniciar sesión",
         "NEW_USER": "¿No tienes una cuenta?",
@@ -18,11 +19,11 @@
       }
     },
     "REGISTER": {
-      "TITLE": "Creación de cuenta",
-      "SUBTITLE": "Por favor, complete el siguiente formulario para crear una cuenta",
+      "TITLE": "Crear cuenta",
+      "SUBTITLE": "Por favor, complete el formulario a continuación para crear una cuenta",
       "FORM": {
         "NAME": "Nombre y apellidos",
-        "EMAIL": "Dirección de correo electrónico",
+        "EMAIL": "Correo electrónico",
         "PASSWORD": "Contraseña",
         "REGISTER": "Crear mi cuenta",
         "OLD_USER": "¿Ya tienes una cuenta?",
@@ -31,9 +32,28 @@
     }
   },
   "DASHBOARD": {
+    "DASHBOARD": {
+      "TODOS": "Tareas",
+      "MY_TODO": "Mis tareas",
+      "TODO": "Por hacer",
+      "DONE": "Completadas"
+    },
     "TODOS": {
       "TITLE": "Lista de tareas",
-      "CREATE": "Crear una tarea"
+      "CREATE": "Crear una tarea",
+      "DELETE": "Eliminar",
+      "FORM": {
+        "TITLE": "Título",
+        "DESCRIPTION": "Descripción",
+        "CANCEL": "Cancelar",
+        "CREATE": "Crear la tarea"
+      }
+    },
+    "USERS": {
+      "TITLE": "Lista de usuarios",
+      "NAME": "Nombre y apellidos",
+      "EMAIL": "Correo electrónico",
+      "DATE": "Fecha de creación"
     }
   }
 }

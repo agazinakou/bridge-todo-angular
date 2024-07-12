@@ -2,6 +2,8 @@ import { Component, HostListener } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { AuthService } from './core/services/auth/auth.service';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,10 @@ export class AppComponent {
   userActivity: any;
   userInactive = new Subject<any>();
 
-  constructor(translate: TranslateService, private authService: AuthService){
+  event: any;
+
+  constructor(translate: TranslateService, private router: Router,
+    private authService: AuthService, private location: Location){
     if(typeof localStorage !== 'undefined'){
       let language: any = localStorage.getItem('LANGUAGE');
       if(language){
@@ -20,13 +25,6 @@ export class AppComponent {
         translate.use(language.code);
       }
     }
-
-    /*this.setTimeout();
-    this.userInactive.subscribe(async () => {
-      if (await this.authService.isAuthenticated()) {
-        this.authService.logout();
-      }
-    });*/
   }
 
   setTimeout() {

@@ -1,0 +1,35 @@
+<div class="d-flex align-items-center">
+  <h2>{{ 'DASHBOARD.USERS.TITLE' | translate }}</h2>
+</div>
+
+<div class="text-center mt-5" *ngIf="loading">
+  <p-progressSpinner
+    styleClass="w-1rem h-1rem"
+    strokeWidth="6"
+    fill="var(--surface-ground)"
+    animationDuration=".5s" />
+</div>
+<div class="mb-5 mt-2" *ngIf="!loading">
+  <div class="card">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">{{ 'DASHBOARD.USERS.NAME' | translate }}</th>
+              <th scope="col">{{ 'DASHBOARD.USERS.EMAIL' | translate }}</th>
+              <th scope="col">{{ 'DASHBOARD.USERS.DATE' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.created_at | date:"d/MM/Y H:m" }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

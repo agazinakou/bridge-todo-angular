@@ -6,12 +6,12 @@
   <div class="modal-dialog">
     <form [formGroup]="todoForm" (ngSubmit)="submit()" class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="addTodoModalLabel">Créer une tâche</h1>
+        <h1 class="modal-title fs-5" id="addTodoModalLabel">{{ 'DASHBOARD.TODOS.CREATE' | translate }}</h1>
         <button type="button" class="btn-close" id="close-modal-button" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="mb-3">
-          <label for="title" class="form-label">Titre</label>
+          <label for="title" class="form-label">{{ 'DASHBOARD.TODOS.FORM.TITLE' | translate }}</label>
           <input
             type="text"
             pInputText
@@ -22,7 +22,7 @@
           />
         </div>
         <div class="mb-3">
-          <label for="description" class="form-label">Description</label>
+          <label for="description" class="form-label">{{ 'DASHBOARD.TODOS.FORM.DESCRIPTION' | translate }}</label>
           <input
             type="text"
             pInputText
@@ -34,8 +34,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" [disabled]="!todoForm.valid" class="btn btn-primary">Créer</button>
+        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'DASHBOARD.TODOS.FORM.CANCEL' | translate }}</button>
+        <button type="submit" [disabled]="!todoForm.valid" class="btn btn-primary">{{ 'DASHBOARD.TODOS.FORM.CREATE' | translate }}</button>
       </div>
     </form>
   </div>

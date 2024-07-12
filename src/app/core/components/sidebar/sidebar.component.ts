@@ -30,6 +30,18 @@ export class SidebarComponent implements OnInit {
       },{
         code: 'es',
         name: 'Espagnol'
+      },{
+        code: 'it',
+        name: 'Italien'
+      },{
+        code: 'ru',
+        name: 'Russe'
+      },{
+        code: 'de',
+        name: 'Allemand'
+      },{
+        code: 'pt',
+        name: 'Portugais'
       }
     ];
     this.getCurrentLanguage();

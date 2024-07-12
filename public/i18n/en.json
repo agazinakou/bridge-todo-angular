@@ -3,6 +3,7 @@
     "MENU": "Menu",
     "DASHBOARD": "Dashboard",
     "TODOS": "Todos",
+    "USERS": "Users",
     "LOGOUT": "Logout"
   },
   "AUTH": {
@@ -12,28 +13,47 @@
       "FORM": {
         "EMAIL": "Email address",
         "PASSWORD": "Password",
-        "CONNEXION": "Log in",
+        "CONNEXION": "Login",
         "NEW_USER": "Don't have an account?",
-        "REGISTER": "Sign up"
+        "REGISTER": "Create an account"
       }
     },
     "REGISTER": {
-      "TITLE": "Sign Up",
-      "SUBTITLE": "Please fill in the form below to create an account",
+      "TITLE": "Account creation",
+      "SUBTITLE": "Please fill out the form below to create an account",
       "FORM": {
         "NAME": "Full name",
         "EMAIL": "Email address",
         "PASSWORD": "Password",
-        "REGISTER": "Sign up",
+        "REGISTER": "Create my account",
         "OLD_USER": "Already have an account?",
         "LOGIN": "Log in"
       }
     }
   },
   "DASHBOARD": {
+    "DASHBOARD": {
+      "TODOS": "Todos",
+      "MY_TODO": "My tasks",
+      "TODO": "To do",
+      "DONE": "Completed"
+    },
     "TODOS": {
-      "TITLE": "Todo list",
-      "CREATE": "Create a task"
+      "TITLE": "Task list",
+      "CREATE": "Create a task",
+      "DELETE": "Delete",
+      "FORM": {
+        "TITLE": "Title",
+        "DESCRIPTION": "Description",
+        "CANCEL": "Cancel",
+        "CREATE": "Create task"
+      }
+    },
+    "USERS": {
+      "TITLE": "User list",
+      "NAME": "Full name",
+      "EMAIL": "Email address",
+      "DATE": "Creation date"
     }
   }
 }

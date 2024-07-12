@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { first } from 'rxjs';
 import { CoreService } from '../../../../core/services/core/core.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -42,6 +43,16 @@ export class LoginComponent {
             if(response.status === 'success'){
               localStorage.setItem('token', response.authorisation.token);
               this.coreService.currentUserSubject.next(response.user);
+
+              Swal.fire({
+                title: 'Ok',
+                icon: 'success',
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true
+              })
+
               this.router.navigate(['/dashboard']);
             }
           },

@@ -3,6 +3,7 @@
     "MENU": "Menu",
     "DASHBOARD": "Tableau de bord",
     "TODOS": "Tâches",
+    "USERS": "Utilisateurs",
     "LOGOUT": "Se déconnecter"
   },
   "AUTH": {
@@ -31,9 +32,28 @@
     }
   },
   "DASHBOARD": {
+    "DASHBOARD": {
+      "TODOS": "Tâches",
+      "MY_TODO": "Mes tâches",
+      "TODO": "À faire",
+      "DONE": "Terminées"
+    },
     "TODOS": {
       "TITLE": "Liste des tâches",
-      "CREATE": "Créer une tâche"
+      "CREATE": "Créer une tâche",
+      "DELETE": "Supprimer",
+      "FORM": {
+        "TITLE": "Titre",
+        "DESCRIPTION": "Description",
+        "CANCEL": "Annuler",
+        "CREATE": "Créer la tâche"
+      }
+    },
+    "USERS": {
+      "TITLE": "Liste des utilisateurs",
+      "NAME": "Nom et prénom(s)",
+      "EMAIL": "Adresse email",
+      "DATE": "Date de création"
     }
   }
 }

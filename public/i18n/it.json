@@ -1,0 +1,59 @@
+{
+  "SIDEBAR": {
+    "MENU": "Menu",
+    "DASHBOARD": "Dashboard",
+    "TODOS": "Compiti",
+    "USERS": "Utenti",
+    "LOGOUT": "Disconnetti"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Autenticazione",
+      "SUBTITLE": "Effettua l'accesso al tuo account",
+      "FORM": {
+        "EMAIL": "Indirizzo email",
+        "PASSWORD": "Password",
+        "CONNEXION": "Accesso",
+        "NEW_USER": "Non hai un account?",
+        "REGISTER": "Crea un account"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Creazione di un account",
+      "SUBTITLE": "Compila il modulo sottostante per creare un account",
+      "FORM": {
+        "NAME": "Nome e cognome",
+        "EMAIL": "Indirizzo email",
+        "PASSWORD": "Password",
+        "REGISTER": "Crea il mio account",
+        "OLD_USER": "Hai già un account?",
+        "LOGIN": "Accedi"
+      }
+    }
+  },
+  "DASHBOARD": {
+    "DASHBOARD": {
+      "TODOS": "Compiti",
+      "MY_TODO": "I miei compiti",
+      "TODO": "Da fare",
+      "DONE": "Completati"
+    },
+    "TODOS": {
+      "TITLE": "Lista dei compiti",
+      "CREATE": "Crea un compito",
+      "DELETE": "Elimina",
+      "FORM": {
+        "TITLE": "Titolo",
+        "DESCRIPTION": "Descrizione",
+        "CANCEL": "Annulla",
+        "CREATE": "Crea il compito"
+      }
+    },
+    "USERS": {
+      "TITLE": "Lista degli utenti",
+      "NAME": "Nome e cognome",
+      "EMAIL": "Indirizzo email",
+      "DATE": "Data di creazione"
+    }
+  }
+}

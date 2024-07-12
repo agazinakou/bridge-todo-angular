@@ -162,6 +162,8 @@
   src: url('../public/fonts/poppins/poppins-v21-latin-900italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+@import "primeicons/primeicons.css";
+
 $primary: #ff3C00;
 $primary-hover: #e04010;
 
@@ -189,6 +191,10 @@ $primary-hover: #e04010;
 
 body, p-component, .p-component {
   font-family: 'Poppins';
+}
+
+body {
+  background-color: #f1f3f5;
 }
 
 .p-password {
@@ -262,3 +268,4 @@ body, p-component, .p-component {
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {
   transition: background-color 1.3s, border-color 1.3s, color 1.3s, transform 0.3s;
 }
+

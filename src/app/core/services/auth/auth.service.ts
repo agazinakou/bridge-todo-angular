@@ -38,14 +38,14 @@ export class AuthService {
     return new Promise((resolve) => {
       const date: any = this.jwtHelperService.getTokenExpirationDate();
       const minutes = this.remainingMinutes(new Date(), new Date(date));
-      if(minutes < 60){
-        this.http
+      if(minutes < 10){
+        /*this.http
         .post<any>(`${environment.apiUrl}/refresh`, {})
         .subscribe((response: any) => {
           console.log('checkTokenValidity', response);
           localStorage.setItem('token', response.authorisation.token);
+          });*/
           resolve(true);
-        });
       } else {
         resolve(true);
       }

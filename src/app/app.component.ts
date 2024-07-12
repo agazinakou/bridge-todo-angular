@@ -21,16 +21,16 @@ export class AppComponent {
       }
     }
 
-    this.setTimeout();
+    /*this.setTimeout();
     this.userInactive.subscribe(async () => {
       if (await this.authService.isAuthenticated()) {
         this.authService.logout();
       }
-    });
+    });*/
   }
 
   setTimeout() {
-    this.userActivity = setTimeout(() => this.userInactive.next(undefined), 300000);
+    this.userActivity = setTimeout(() => this.userInactive.next(undefined), 3000);
   }
 
   @HostListener('window:mousemove') refreshUserState() {

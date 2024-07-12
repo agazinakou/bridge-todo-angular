@@ -1,13 +1,17 @@
 import { DOCUMENT } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { environment } from '../../../../environments/environment';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(@Inject(DOCUMENT) private document: Document, private jwtHelperService: JwtHelperService) { }
+  constructor(@Inject(DOCUMENT) private document: Document,
+  private jwtHelperService: JwtHelperService, private http: HttpClient) { }
 
   currentTokenValue = () => {
     if(typeof localStorage !== 'undefined'){
@@ -24,11 +28,37 @@ export class AuthService {
         this.logout();
         return false;
       } else {
-        return true;
+        return await this.checkTokenValidity();
       }
     } else {
       return false;
     }
+  }
+
+  checkTokenValidity = () => {
+    return new Promise((resolve) => {
+      let date: any = this.jwtHelperService.getTokenExpirationDate();
+      let minutes = this.remainingMinutes(new Date(), new Date(date));
+      if(minutes < 60){
+        this.http
+        .post<any>(`${environment.apiUrl}/refresh`, {})
+        .subscribe((response: any) => {
+          console.log('checkTokenValidity', response);
+          localStorage.setItem('token', response.authorisation.token);
+          resolve(true);
+        });
+      } else {
+        resolve(true);
+      }
+    });
+
+  }
+
+  remainingMinutes = (now: any, tokenExpireDate: any) => {
+    const diffInMs = Math.abs(now - tokenExpireDate);
+    const diffInMinutes = Math.floor(diffInMs / (1000 * 60));
+    console.log('diffInMinutes', diffInMinutes);
+    return diffInMinutes;
   }
 
   logout = () => {

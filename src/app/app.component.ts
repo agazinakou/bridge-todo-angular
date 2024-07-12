@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { environment } from '../environments/environment';
+import { Subject } from 'rxjs';
+import { AuthService } from './core/services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,10 @@ import { environment } from '../environments/environment';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'bridge-todo';
+  userActivity: any;
+  userInactive: Subject<any> = new Subject();
 
-  constructor(translate: TranslateService){
-    console.log('env', environment);
+  constructor(translate: TranslateService, private authService: AuthService){
     if(typeof localStorage !== 'undefined'){
       let language: any = localStorage.getItem('LANGUAGE');
       if(language){
@@ -19,6 +20,23 @@ export class AppComponent {
         translate.use(language.code);
       }
     }
+
+    this.setTimeout();
+    this.userInactive.subscribe(async () => {
+      if (await this.authService.isAuthenticated()) {
+        this.authService.logout();
+      }
+    });
+  }
+
+
+  setTimeout() {
+    this.userActivity = setTimeout(() => this.userInactive.next(undefined), 3000);
+  }
+
+  @HostListener('window:mousemove') refreshUserState() {
+    clearTimeout(this.userActivity);
+    this.setTimeout();
   }
 
 }

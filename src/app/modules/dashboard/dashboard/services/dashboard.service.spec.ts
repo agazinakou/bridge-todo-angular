@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { DashboardService } from './dashboard.service';
 import { environment } from '../../../../../environments/environment';
 
@@ -9,9 +9,10 @@ describe('DashboardService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [provideHttpClientTesting()],
+      imports: [HttpClientTestingModule],
       providers: [DashboardService]
     });
+
     service = TestBed.inject(DashboardService);
     httpMock = TestBed.inject(HttpTestingController);
   });
@@ -24,8 +25,8 @@ describe('DashboardService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should fetch resume data', () => {
-    const mockResponse = { data: 'resume data' };
+  it('should return resume data', () => {
+    const mockResponse = { summary: 'This is a summary' };
 
     service.getResume().subscribe((response) => {
       expect(response).toEqual(mockResponse);
@@ -36,19 +37,19 @@ describe('DashboardService', () => {
     req.flush(mockResponse);
   });
 
-  it('should handle error during resume data fetch', () => {
+  it('should handle error', () => {
     const mockError = { status: 500, statusText: 'Server Error' };
 
-    service.getResume().subscribe(
-      () => {
-        fail('Expected an error, not resume data');
-      },
-      (error) => {
+    service.getResume().subscribe({
+      next: () => fail('expected an error, not response'),
+      error: (error) => {
         expect(error.status).toBe(500);
+        expect(error.statusText).toBe('Server Error');
       }
-    );
+    });
 
     const req = httpMock.expectOne(`${environment.apiUrl}/resume`);
+    expect(req.request.method).toBe('GET');
     req.flush(null, mockError);
   });
 });

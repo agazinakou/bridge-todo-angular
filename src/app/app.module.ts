@@ -14,10 +14,9 @@ import { PasswordModule } from 'primeng/password';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './core/components/sidebar/sidebar.component';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
-import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { environment } from '../environments/environment.development';
-import { DashboardComponent } from './modules/dashboard/dashboard/components/dashboard.component';
+import { environment } from '../environments/environment';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../../i18n/', '.json');

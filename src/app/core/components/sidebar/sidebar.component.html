@@ -10,7 +10,7 @@
           <ul class="dropdown-menu">
             <li *ngFor="let language of languages">
               <ng-container *ngIf="language.code !== currentLanguage.code">
-                <a class="dropdown-item" (click)="choose(language)">{{ language.name }}</a>
+                <a class="dropdown-item" (click)="choose(language)" href="#">{{ language.name }}</a>
               </ng-container>
             </li>
           </ul>
@@ -43,7 +43,7 @@
         routerLinkActive="active">{{ 'SIDEBAR.TODOS' | translate }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-start cursor" (click)="logout()">{{ 'SIDEBAR.LOGOUT' | translate }}</a>
+        <a class="nav-link text-start cursor" href="#" (click)="logout()">{{ 'SIDEBAR.LOGOUT' | translate }}</a>
       </li>
     </ul>
   </div>

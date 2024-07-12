@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
             this.initChart();
           }
         },
-        (error: any) => {
+        () => {
           this.loading = false;
         }
       );

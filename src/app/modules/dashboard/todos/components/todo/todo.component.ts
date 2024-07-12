@@ -25,8 +25,7 @@ export class TodoComponent {
           if(response.status === 'success'){
             this.action.emit(true);
           }
-        },
-        (error: any) => {}
+        }
       );
   }
 
@@ -39,8 +38,7 @@ export class TodoComponent {
           if(response.status === 'success'){
             this.action.emit(true);
           }
-        },
-        (error: any) => {}
+        }
       );
   }
 }

@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
-import { BehaviorSubject, first } from 'rxjs';
+import { first } from 'rxjs';
 import { CoreService } from '../../../../core/services/core/core.service';
-import { User } from '../../../../core/models/user';
 
 @Component({
   selector: 'app-login',
@@ -46,7 +45,7 @@ export class LoginComponent {
               this.router.navigate(['/dashboard']);
             }
           },
-          (error: any) => {
+          () => {
             this.loading = false;
           }
         );

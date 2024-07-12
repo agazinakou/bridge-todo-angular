@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   return next(req).pipe(
     catchError((err: any) => {
-      var message = '';
+      let message = '';
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401) {
           message = 'Unauthorized';

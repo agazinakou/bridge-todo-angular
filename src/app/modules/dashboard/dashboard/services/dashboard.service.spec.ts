@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { DashboardService } from './dashboard.service';
-import { environment } from '../../../../../environments/environment.development';
+import { environment } from '../../../../../environments/environment';
 
 describe('DashboardService', () => {
   let service: DashboardService;
@@ -40,7 +40,7 @@ describe('DashboardService', () => {
     const mockError = { status: 500, statusText: 'Server Error' };
 
     service.getResume().subscribe(
-      (response) => {
+      () => {
         fail('Expected an error, not resume data');
       },
       (error) => {

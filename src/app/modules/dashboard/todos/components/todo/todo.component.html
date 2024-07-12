@@ -1,11 +1,11 @@
 <div class="card mt-4">
   <div class="card-body">
-    <label class="custom-checkbox" (click)="mark(todo)">
+    <a tabindex=0 role="button" class="custom-checkbox text-decoration-none" (keyup)="mark(todo)" (click)="mark(todo)">
       <input name="dummy" [checked]="todo.done" type="checkbox"><span class="checkmark"></span>
       <span [ngStyle]="{ 'text-decoration' : todo.done ? 'line-through' : 'none' }">
         {{ todo.title }}
       </span>
-    </label>
+    </a>
     <p class="mt-2 mb-2">{{ todo.description }}</p>
     <div class="row">
       <div class="col-md-3">

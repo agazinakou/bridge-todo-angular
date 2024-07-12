@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../services/todos.service';
-import { first, Observable, Subscriber } from 'rxjs';
+import { first } from 'rxjs';
 import { Todo } from '../../../../core/models/todo';
 
 @Component({
@@ -29,7 +29,7 @@ export class TodosComponent implements OnInit {
             this.loading = false;
           }
         },
-        (error: any) => {
+        () => {
           this.loading = false;
         }
       );

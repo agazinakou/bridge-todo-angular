@@ -41,7 +41,7 @@ export class AddTodoComponent {
               this.action.emit(false);
             }
           },
-          (error: any) => {
+          () => {
             this.loading = false;
           }
         );

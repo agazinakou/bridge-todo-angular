@@ -1,9 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { CoreService } from './core.service';
-import { User } from '../../models/user';
 import { environment } from '../../../../environments/environment';
-import { BehaviorSubject } from 'rxjs';
 
 describe('CoreService', () => {
   let service: CoreService;

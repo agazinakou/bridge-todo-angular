@@ -10,7 +10,7 @@ import { AuthService } from './core/services/auth/auth.service';
 })
 export class AppComponent {
   userActivity: any;
-  userInactive: Subject<any> = new Subject();
+  userInactive = new Subject<any>();
 
   constructor(translate: TranslateService, private authService: AuthService){
     if(typeof localStorage !== 'undefined'){
@@ -29,9 +29,8 @@ export class AppComponent {
     });
   }
 
-
   setTimeout() {
-    this.userActivity = setTimeout(() => this.userInactive.next(undefined), 3000);
+    this.userActivity = setTimeout(() => this.userInactive.next(undefined), 300000);
   }
 
   @HostListener('window:mousemove') refreshUserState() {

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from '../../../../environments/environment';
-import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -37,8 +36,8 @@ export class AuthService {
 
   checkTokenValidity = () => {
     return new Promise((resolve) => {
-      let date: any = this.jwtHelperService.getTokenExpirationDate();
-      let minutes = this.remainingMinutes(new Date(), new Date(date));
+      const date: any = this.jwtHelperService.getTokenExpirationDate();
+      const minutes = this.remainingMinutes(new Date(), new Date(date));
       if(minutes < 60){
         this.http
         .post<any>(`${environment.apiUrl}/refresh`, {})
